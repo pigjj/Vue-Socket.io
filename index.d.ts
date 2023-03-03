@@ -1,13 +1,11 @@
 import SocketIOClient from "socket.io-client";
-import {
-    DefaultComputed,
-    DefaultData,
-    DefaultMethods,
-    DefaultProps,
-    PropsDefinition,
-} from "vue/types/options";
+// @ts-ignore
+import { DefaultComputed, DefaultData, DefaultMethods, DefaultProps, PropsDefinition, } from "vue/types/options";
+// @ts-ignore
 import { Vue } from "vue/types/vue";
+// @ts-ignore
 import { PluginFunction, PluginObject } from "vue";
+// @ts-ignore
 import { Store } from "vuex";
 
 interface socketHandler<T> {
@@ -20,6 +18,7 @@ interface Sockets<V> {
 
 declare module 'vue/types/vue' {
     interface Vue {
+        // @ts-ignore
         $socket: SocketIOClient.Socket,
         sockets: {
             subscribe(eventName: string, handler: socketHandler<Vue>): void,
@@ -42,6 +41,7 @@ declare module 'vue/types/options' {
 
 export interface VueSocketOptions {
     debug?: boolean;
+    // @ts-ignore
     connection: string | SocketIOClient.Socket,
     vuex?: {
         store?: Store<any>,
